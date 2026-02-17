@@ -82,6 +82,18 @@ const Home: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <style>
+        {`
+          @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(2deg); }
+            50% { transform: translateY(-15px) rotate(4deg); }
+          }
+          .animate-paper-float {
+            animation: float 8s ease-in-out infinite;
+          }
+        `}
+      </style>
+
       {/* Hero Section */}
       <section className="relative bg-slate-50 pt-16 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Dot Grid Background */}
@@ -149,13 +161,27 @@ const Home: React.FC = () => {
             </div>
 
             {/* Right Column: Visual Product Shot */}
-            <div className="hidden lg:block relative h-[600px] flex items-center justify-center" data-aos="fade-left" data-aos-delay="200">
-               {/* Decorative Circles */}
-               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-pink-100/50 rounded-full blur-3xl -z-10"></div>
+            <div className="hidden lg:flex relative h-[700px] items-center justify-center perspective-[1000px]" data-aos="fade-left" data-aos-delay="200">
+               {/* 1. Glow / Backlight */}
+               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] -z-10 pointer-events-none">
+                  {/* Hot Pink Orb */}
+                  <div className="absolute top-20 right-10 w-96 h-96 bg-pink-500/20 rounded-full blur-[90px] mix-blend-multiply animate-pulse"></div>
+                  {/* Navy/Blue Orb */}
+                  <div className="absolute bottom-20 left-10 w-96 h-96 bg-slate-900/20 rounded-full blur-[90px] mix-blend-multiply"></div>
+               </div>
                
-               {/* Paper Stack Effect */}
-               <div className="absolute top-8 left-8 w-full max-w-md transform rotate-3 hover:rotate-1 transition-transform duration-500">
-                  <div className="bg-white rounded-xl shadow-2xl border border-slate-200 p-8 h-[540px] relative overflow-hidden">
+               {/* 2. Floating Animation Wrapper */}
+               <div className="relative w-full max-w-[480px] animate-paper-float">
+                  
+                  {/* Bottom Sheet */}
+                  <div className="absolute inset-0 bg-white rounded-xl border border-slate-100 shadow-lg transform -rotate-6 scale-[0.95] origin-center -z-20"></div>
+                  
+                  {/* Middle Sheet */}
+                  <div className="absolute inset-0 bg-white rounded-xl border border-slate-100 shadow-lg transform -rotate-3 scale-[0.98] origin-center -z-10"></div>
+
+                  {/* Main Sheet */}
+                  <div className="relative bg-white rounded-xl border border-slate-100 p-8 sm:p-10 h-auto min-h-[620px] overflow-hidden 
+                                  shadow-[0_2px_10px_rgba(0,0,0,0.06),0_20px_40px_-5px_rgba(0,0,0,0.1),0_50px_100px_-20px_rgba(219,39,119,0.25)]">
                      
                      {/* Paper Header */}
                      <div className="flex justify-between items-start mb-6 border-b-2 border-slate-100 pb-4">
@@ -230,11 +256,6 @@ const Home: React.FC = () => {
                         VERIFIED
                      </div>
                   </div>
-               </div>
-
-               {/* Second Sheet Behind */}
-               <div className="absolute top-12 left-12 w-full max-w-md transform -rotate-2 -z-10 opacity-60">
-                  <div className="bg-slate-50 rounded-xl shadow-xl border border-slate-200 h-[540px]"></div>
                </div>
             </div>
 
