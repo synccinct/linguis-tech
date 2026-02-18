@@ -480,8 +480,8 @@ const Home: React.FC = () => {
                     </div>
                  </div>
                  
-                 <div className="absolute top-8 right-8 rotate-12 opacity-80 mix-blend-multiply">
-                     <div className="border-2 border-red-600 text-red-600 px-2 py-1 text-xs font-bold uppercase tracking-widest rounded font-sans">
+                 <div className="absolute top-6 right-6 sm:top-10 sm:right-10 opacity-80 mix-blend-multiply transform rotate-12 pointer-events-none">
+                     <div className="border-4 border-pink-600 text-pink-600 px-6 py-2 text-2xl sm:text-3xl font-black uppercase tracking-[0.2em] rounded-lg shadow-sm backdrop-blur-[1px]">
                          Verified
                      </div>
                  </div>
@@ -504,14 +504,26 @@ const Home: React.FC = () => {
           </div>
 
           {/* Founder Signature */}
-          <div className="flex flex-col items-center justify-center text-center mt-20" data-aos="fade-up" data-aos-delay="100">
-             <div className="bg-white p-1 rounded-full border-2 border-slate-200 mb-4 shadow-sm">
-                <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center overflow-hidden">
-                   <User size={32} className="text-slate-400" />
+          <div 
+            className="flex flex-col md:flex-row items-center gap-6 bg-white px-8 py-6 rounded-[50px] shadow-[0_10px_30px_rgba(236,72,153,0.1)] max-w-2xl mx-auto mt-20 border border-pink-500/10" 
+            data-aos="fade-up" 
+            data-aos-delay="100"
+          >
+             <img 
+               src="https://api.dicebear.com/9.x/avataaars/svg?seed=Felix" 
+               alt="Founder" 
+               className="w-20 h-20 rounded-full border-2 border-pink-500 p-1 bg-pink-50 object-cover flex-shrink-0"
+             />
+             <div className="text-center md:text-left flex-1">
+                <p className="italic text-slate-700 text-lg mb-2 font-serif leading-relaxed">
+                  "I built this because I was tired of fixing ChatGPT's mistakes."
+                </p>
+                <div className="flex flex-col md:flex-row items-center md:items-baseline gap-2 justify-center md:justify-start">
+                   <span className="font-bold text-slate-900 font-handwriting text-xl">Built by a Linguist</span>
+                   <span className="hidden md:inline text-slate-300 mx-1">•</span>
+                   <span className="text-xs font-bold text-pink-600 uppercase tracking-widest">AI Architect</span>
                 </div>
              </div>
-             <p className="text-slate-900 font-bold text-lg mb-1">Built by a Linguist & AI Architect</p>
-             <p className="text-slate-500 text-sm font-medium uppercase tracking-wide">Who actually teaches languages</p>
           </div>
         </div>
       </section>
