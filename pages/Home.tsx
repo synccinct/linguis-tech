@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Check, Newspaper, BookOpen, Clock, Globe, Zap, Sparkles, FileText, Printer, Layout, Users, Star, Bot, UserCheck, CheckCircle2, User, ArrowRight } from 'lucide-react';
+import { Check, Newspaper, BookOpen, Clock, Globe, Zap, Sparkles, FileText, Printer, Layout, Users, Star, Bot, UserCheck, CheckCircle2, User, ArrowRight, School } from 'lucide-react';
 import { LanguageOption, StudentGroup } from '../types';
 
 const getWeekNumber = (date: Date) => {
@@ -285,36 +285,74 @@ const Home: React.FC = () => {
       </section>
 
       {/* Who it's for */}
-      <section className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
-          <div className="inline-flex items-center justify-center p-3 bg-pink-50 rounded-full mb-6 text-pink-600 shadow-sm">
-            <Clock size={32} />
+      <section className="relative py-24 bg-white overflow-hidden">
+        {/* Peach Dot Grid Background - subtle */}
+        <div className="absolute inset-0 z-0 opacity-20 pointer-events-none" 
+              style={{ backgroundImage: 'radial-gradient(#f472b6 1px, transparent 1px)', backgroundSize: '24px 24px' }}>
+        </div>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10" data-aos="fade-up">
+          
+          {/* Visual Bridge: Transformation Badge */}
+          <div className="flex items-center justify-center gap-6 mb-12">
+             {/* Old Way */}
+             <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center border border-slate-200">
+               <FileText className="text-slate-500" size={28} strokeWidth={2} />
+             </div>
+
+             {/* Arrow */}
+             <div className="text-slate-300">
+                <ArrowRight size={32} strokeWidth={3} />
+             </div>
+
+             {/* New Way */}
+             <div className="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center shadow-lg shadow-pink-200 ring-4 ring-pink-50">
+               <Layout className="text-white" size={28} strokeWidth={2} />
+             </div>
           </div>
+
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6 tracking-tight">
             Stop hunting for texts. Start teaching the world.
           </h2>
-          <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl mx-auto">
-            Textbooks can't keep up with a changing world. We bridge the gap between outdated curriculums and real life with fresh, graded news stories delivered to your inbox every week.
+          <p className="text-xl text-slate-600 mb-12 leading-relaxed max-w-2xl mx-auto">
+            Textbooks can't keep up. We bridge the gap between outdated curriculums and real life with <strong className="text-slate-900 font-bold">fresh, graded news stories</strong> delivered to your inbox every week.
           </p>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
-            <div className="flex items-center gap-3 bg-slate-50 px-5 py-3 rounded-full border border-slate-100 shadow-sm transition-transform hover:-translate-y-1">
-              <div className="bg-green-100 p-1 rounded-full">
-                 <Check size={16} className="text-green-600" strokeWidth={3} />
-              </div>
-              <span className="font-semibold text-slate-700">Cut prep time by 90%</span>
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Pill 1 */}
+            <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-pink-200 hover:-translate-y-1 transition-all duration-300 flex flex-row items-center gap-4 text-left group">
+               <div className="relative bg-pink-50 p-2.5 rounded-lg text-pink-600 group-hover:bg-pink-100 transition-colors flex items-center justify-center">
+                  <Zap size={24} strokeWidth={0} fill="currentColor" className="opacity-20 absolute" />
+                  <Zap size={24} strokeWidth={2.5} className="relative z-10" />
+               </div>
+               <div>
+                  <div className="font-bold text-slate-900 leading-tight">Cut prep time</div>
+                  <div className="text-xs font-semibold text-slate-500 mt-0.5">Save ~3 hours/week</div>
+               </div>
             </div>
-            <div className="flex items-center gap-3 bg-slate-50 px-5 py-3 rounded-full border border-slate-100 shadow-sm transition-transform hover:-translate-y-1">
-              <div className="bg-green-100 p-1 rounded-full">
-                 <Check size={16} className="text-green-600" strokeWidth={3} />
-              </div>
-              <span className="font-semibold text-slate-700">Engage students with relevant topics</span>
+
+            {/* Pill 2 */}
+            <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-pink-200 hover:-translate-y-1 transition-all duration-300 flex flex-row items-center gap-4 text-left group">
+               <div className="relative bg-pink-50 p-2.5 rounded-lg text-pink-600 group-hover:bg-pink-100 transition-colors flex items-center justify-center">
+                  <Sparkles size={24} strokeWidth={0} fill="currentColor" className="opacity-20 absolute" />
+                  <Sparkles size={24} strokeWidth={2.5} className="relative z-10" />
+               </div>
+               <div>
+                  <div className="font-bold text-slate-900 leading-tight">Engage students</div>
+                  <div className="text-xs font-semibold text-slate-500 mt-0.5">100% current events</div>
+               </div>
             </div>
-            <div className="flex items-center gap-3 bg-slate-50 px-5 py-3 rounded-full border border-slate-100 shadow-sm transition-transform hover:-translate-y-1">
-              <div className="bg-green-100 p-1 rounded-full">
-                 <Check size={16} className="text-green-600" strokeWidth={3} />
-              </div>
-              <span className="font-semibold text-slate-700">Designed for real classrooms & 1:1s</span>
+
+            {/* Pill 3 */}
+            <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-pink-200 hover:-translate-y-1 transition-all duration-300 flex flex-row items-center gap-4 text-left group">
+               <div className="relative bg-pink-50 p-2.5 rounded-lg text-pink-600 group-hover:bg-pink-100 transition-colors flex items-center justify-center">
+                  <School size={24} strokeWidth={0} fill="currentColor" className="opacity-20 absolute" />
+                  <School size={24} strokeWidth={2.5} className="relative z-10" />
+               </div>
+               <div>
+                  <div className="font-bold text-slate-900 leading-tight">Real Classrooms</div>
+                  <div className="text-xs font-semibold text-slate-500 mt-0.5">Print & Go ready</div>
+               </div>
             </div>
           </div>
         </div>
