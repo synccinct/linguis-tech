@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
       {/* Top Bar */}
       <div className="bg-slate-900 text-slate-300 text-xs py-2 px-4 text-center border-b border-slate-800">
         <p className="font-medium">
-          The only AI lesson generator built by actual linguists.
+          linguis.learn · personalised lessons and practice — powered by linguis.lesson
         </p>
       </div>
 

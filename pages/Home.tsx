@@ -10,6 +10,13 @@ const getWeekNumber = (date: Date) => {
   return Math.ceil((((d.getTime() - yearStart.getTime()) / 86400000) + 1) / 7);
 };
 
+const AVATARS = [
+  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64",
+  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=64&h=64",
+  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=64&h=64",
+  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=64&h=64"
+];
+
 // Mock data for real-time preview
 const PREVIEWS: Record<LanguageOption, { title: string; content: string; vocab: string[] }> = {
   'English (EFL)': {
@@ -110,7 +117,13 @@ const Home: React.FC = () => {
                 data-aos="fade-up"
                 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-6 leading-[1.1]"
               >
-                Fresh Lesson Content. Every Week. <br />
+                <span className="relative inline-block mr-3">
+                  Fresh
+                  <svg className="absolute w-full h-[15px] -bottom-2 left-0 text-pink-500 -z-10" viewBox="0 0 100 15" preserveAspectRatio="none">
+                     <path d="M0,13 L100,5" fill="none" stroke="currentColor" strokeWidth="8" strokeLinecap="round" />
+                  </svg>
+                </span>
+                Lesson Content. Every Week. <br />
                 <span className="text-pink-600 transition-opacity duration-500 block mt-2">
                   For {LANGUAGES_DISPLAY[currentLangIndex]}
                 </span>
@@ -127,31 +140,39 @@ const Home: React.FC = () => {
               <div 
                 data-aos="fade-up"
                 data-aos-delay="200"
-                className="flex flex-col sm:flex-row items-start sm:items-center gap-6"
+                className="flex flex-col items-start gap-6"
               >
                 <a 
                   href="#signup" 
-                  className="bg-slate-900 hover:bg-slate-800 text-white text-lg font-bold py-4 px-8 rounded-xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+                  className="bg-pink-600 hover:bg-pink-700 text-white text-lg font-bold py-4 px-8 rounded-xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto text-center"
                 >
                   Get Free Weekly Lessons
                 </a>
                 
                 {/* Social Proof */}
-                <div className="flex items-center gap-3 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-200">
-                  <div className="flex -space-x-2">
-                     {[1,2,3].map(i => (
-                       <div key={i} className="w-8 h-8 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-xs font-bold text-slate-500">
-                         <Users size={14} />
-                       </div>
+                <div className="flex flex-wrap items-center gap-4">
+                  <div className="flex -space-x-4">
+                     {AVATARS.map((src, i) => (
+                       <img 
+                          key={i} 
+                          src={src} 
+                          alt={`Member ${i+1}`}
+                          className="w-10 h-10 rounded-full border-2 border-white object-cover ring-1 ring-slate-100"
+                       />
                      ))}
                   </div>
-                  <div className="text-sm font-medium text-slate-700">
-                    Join <span className="font-bold text-slate-900">1,000+</span> educators
+                  <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full border border-slate-200 shadow-sm transition-transform hover:scale-[1.02]">
+                    <div className="text-sm font-medium text-slate-700">
+                      Join <span className="font-bold text-slate-900">1,000+</span> educators
+                    </div>
+                    <div className="bg-blue-100 text-blue-600 rounded-full p-0.5">
+                      <Check size={12} strokeWidth={3} />
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-6 flex items-center gap-2 text-sm text-slate-500" data-aos="fade-up" data-aos-delay="300">
+              <div className="mt-8 flex items-center gap-2 text-sm text-slate-500" data-aos="fade-up" data-aos-delay="300">
                  <Check size={16} className="text-green-500" />
                  <span>Free for teachers</span>
                  <span className="mx-2">·</span>
