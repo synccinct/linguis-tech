@@ -359,9 +359,9 @@ const Home: React.FC = () => {
       </section>
 
       {/* What you get */}
-      <section className="relative py-24 bg-slate-900 text-white overflow-hidden">
+      <section className="relative py-24 bg-slate-950 text-white overflow-hidden">
          {/* Dot Grid Background (White/Grey with low opacity) */}
-        <div className="absolute inset-0 z-0 opacity-10" 
+        <div className="absolute inset-0 z-0 opacity-5" 
              style={{ backgroundImage: 'radial-gradient(#ffffff 1.5px, transparent 1.5px)', backgroundSize: '32px 32px' }}>
         </div>
 
@@ -376,12 +376,16 @@ const Home: React.FC = () => {
             <div 
               data-aos="fade-up" 
               data-aos-delay="0"
-              className="bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 border border-slate-700/50 hover:border-pink-500/50 hover:bg-slate-800 transition-all duration-300 group flex flex-col items-center text-center"
+              className="relative bg-slate-900/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-800 hover:border-pink-500 hover:shadow-[0_0_30px_-5px_rgba(236,72,153,0.3)] hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center"
             >
-              <div className="bg-slate-900/50 rounded-xl p-4 mb-6 border border-slate-700 group-hover:border-pink-500/30 transition-colors">
-                <Globe className="text-pink-500 fill-pink-500/20" size={32} strokeWidth={1.5} />
+              <div className="w-16 h-16 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-center mb-6 group-hover:border-pink-500/50 group-hover:shadow-[inset_0_0_20px_-5px_rgba(236,72,153,0.15)] transition-all duration-300">
+                <Globe 
+                  className="text-pink-500 fill-pink-500/20 drop-shadow-[0_0_10px_rgba(236,72,153,0.5)] transition-transform duration-300 group-hover:scale-110" 
+                  size={32} 
+                  strokeWidth={2} 
+                />
               </div>
-              <h3 className="text-xl font-bold mb-3">Multi-Level Content</h3>
+              <h3 className="text-2xl font-bold mb-3">Multi-Level Content</h3>
               <p className="text-slate-300 leading-relaxed">
                 Graded reading materials for 5 languages. Whether you teach beginners or advanced learners, we've got you covered.
               </p>
@@ -391,12 +395,16 @@ const Home: React.FC = () => {
             <div 
               data-aos="fade-up" 
               data-aos-delay="100"
-              className="bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 border border-slate-700/50 hover:border-pink-500/50 hover:bg-slate-800 transition-all duration-300 group flex flex-col items-center text-center"
+              className="relative bg-slate-900/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-800 hover:border-pink-500 hover:shadow-[0_0_30px_-5px_rgba(236,72,153,0.3)] hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center"
             >
-              <div className="bg-slate-900/50 rounded-xl p-4 mb-6 border border-slate-700 group-hover:border-pink-500/30 transition-colors">
-                <Newspaper className="text-pink-500 fill-pink-500/20" size={32} strokeWidth={1.5} />
+              <div className="w-16 h-16 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-center mb-6 group-hover:border-pink-500/50 group-hover:shadow-[inset_0_0_20px_-5px_rgba(236,72,153,0.15)] transition-all duration-300">
+                <Newspaper 
+                  className="text-pink-500 fill-pink-500/20 drop-shadow-[0_0_10px_rgba(236,72,153,0.5)] transition-transform duration-300 group-hover:scale-110" 
+                  size={32} 
+                  strokeWidth={2} 
+                />
               </div>
-              <h3 className="text-xl font-bold mb-3">Fresh, Real-World Topics</h3>
+              <h3 className="text-2xl font-bold mb-3">Fresh, Real-World Topics</h3>
               <p className="text-slate-300 leading-relaxed">
                 Ditch the boring dialogs. Engage students with this week's biggest stories in entertainment, tech, and world affairs.
               </p>
@@ -406,12 +414,16 @@ const Home: React.FC = () => {
             <div 
               data-aos="fade-up" 
               data-aos-delay="200"
-              className="bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 border border-slate-700/50 hover:border-pink-500/50 hover:bg-slate-800 transition-all duration-300 group flex flex-col items-center text-center"
+              className="relative bg-slate-900/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-800 hover:border-pink-500 hover:shadow-[0_0_30px_-5px_rgba(236,72,153,0.3)] hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center"
             >
-              <div className="bg-slate-900/50 rounded-xl p-4 mb-6 border border-slate-700 group-hover:border-pink-500/30 transition-colors">
-                 <BookOpen className="text-pink-500 fill-pink-500/20" size={32} strokeWidth={1.5} />
+              <div className="w-16 h-16 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-center mb-6 group-hover:border-pink-500/50 group-hover:shadow-[inset_0_0_20px_-5px_rgba(236,72,153,0.15)] transition-all duration-300">
+                 <BookOpen 
+                    className="text-pink-500 fill-pink-500/20 drop-shadow-[0_0_10px_rgba(236,72,153,0.5)] transition-transform duration-300 group-hover:scale-110" 
+                    size={32} 
+                    strokeWidth={2} 
+                 />
               </div>
-              <h3 className="text-xl font-bold mb-3">The 'Zero-Prep' Toolkit</h3>
+              <h3 className="text-2xl font-bold mb-3">The Zero-Prep Toolkit</h3>
               <p className="text-slate-300 leading-relaxed">
                 More than just a text. Get comprehension questions, vocab lists, grammar drills, and writing tasks—formatted and ready to print.
               </p>
@@ -420,51 +432,79 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Why it's different */}
-      <section className="py-24 bg-pink-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Why it's different - The Hybrid Engine */}
+      <section className="py-24 bg-slate-50 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16" data-aos="fade-up">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6 tracking-tight">Not just another generic AI worksheet.</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6 tracking-tight">The Hybrid Engine</h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Most AI tools hallucinate or sound robotic. We do it differently.
+              Stop choosing between AI speed and human quality. We built a pipeline that gives you both.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <div 
-              className="bg-white p-8 rounded-2xl shadow-sm border border-pink-100 flex flex-col items-center text-center" 
-              data-aos="fade-up" 
-              data-aos-delay="100"
-            >
-               <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mb-6 text-pink-600">
-                 <Bot size={32} />
-               </div>
-               <h3 className="text-xl font-bold text-slate-900 mb-3">Structured by AI</h3>
-               <p className="text-slate-600 leading-relaxed">
-                 We scan global news to find the perfect stories, extracting key vocabulary and grammar patterns instantly.
-               </p>
-            </div>
+          <div className="flex flex-col md:flex-row shadow-2xl rounded-3xl overflow-hidden mx-auto max-w-5xl" data-aos="fade-up">
             
-            <div 
-              className="bg-white p-8 rounded-2xl shadow-sm border border-pink-100 flex flex-col items-center text-center relative overflow-hidden" 
-              data-aos="fade-up" 
-              data-aos-delay="200"
-            >
-               <div className="absolute top-4 right-4 bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
-                 <CheckCircle2 size={12} /> Verified
-               </div>
-               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 text-blue-600">
-                 <UserCheck size={32} />
-               </div>
-               <h3 className="text-xl font-bold text-slate-900 mb-3">Refined by Humans</h3>
-               <p className="text-slate-600 leading-relaxed">
-                 Every lesson is reviewed by a language specialist to ensure it is age-appropriate and culturally accurate.
-               </p>
+            {/* Left Card - Digital */}
+            <div className="md:w-1/2 bg-slate-950 p-10 md:p-12 relative flex flex-col justify-between border-b md:border-b-0 md:border-r border-slate-800">
+                {/* Grid BG */}
+                <div className="absolute inset-0 opacity-10" 
+                     style={{ backgroundImage: 'linear-gradient(#6366f1 1px, transparent 1px), linear-gradient(90deg, #6366f1 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
+                </div>
+                
+                <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-8">
+                        <div className="p-2 bg-blue-500/10 rounded border border-blue-500/20 text-blue-400">
+                            <Bot size={24} />
+                        </div>
+                        <span className="font-mono text-xs text-blue-400 uppercase tracking-widest">Step 01_Generate</span>
+                    </div>
+                    
+                    <h3 className="font-mono text-2xl text-white mb-4">Structured by AI</h3>
+                    <div className="font-mono text-sm text-slate-400 space-y-2">
+                        <p>&gt; Scanning global news sources...</p>
+                        <p>&gt; Extracting B1/B2 vocabulary...</p>
+                        <p>&gt; Generating comprehension matrix...</p>
+                        <p className="text-emerald-500">&gt;&gt; Output generated in 0.8s</p>
+                    </div>
+                </div>
             </div>
+
+            {/* Right Card - Paper */}
+            <div className="md:w-1/2 bg-[#fffcf5] p-10 md:p-12 relative flex flex-col justify-between">
+                {/* Connector Icon overlay */}
+                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 md:top-1/2 md:left-0 md:-translate-y-1/2 z-20">
+                    <div className="bg-white p-2 rounded-full shadow-lg border border-slate-100">
+                        <div className="bg-slate-900 rounded-full p-2 text-white">
+                            <ArrowRight size={20} className="rotate-90 md:rotate-0" />
+                        </div>
+                    </div>
+                 </div>
+                 
+                 <div className="absolute top-8 right-8 rotate-12 opacity-80 mix-blend-multiply">
+                     <div className="border-2 border-red-600 text-red-600 px-2 py-1 text-xs font-bold uppercase tracking-widest rounded font-sans">
+                         Verified
+                     </div>
+                 </div>
+
+                 <div className="relative z-10">
+                     <div className="flex items-center gap-3 mb-8">
+                        <div className="p-2 bg-amber-100/50 rounded-full text-amber-800">
+                            <UserCheck size={24} />
+                        </div>
+                        <span className="font-serif italic text-amber-800/70">Step 02. Refine</span>
+                    </div>
+
+                    <h3 className="font-serif text-3xl text-slate-900 mb-4">Refined by Humans</h3>
+                    <p className="font-serif text-lg text-slate-600 leading-relaxed">
+                        A real language teacher reviews every line. We adjust cultural nuance, fix tone, and ensure the pedagogy lands perfectly.
+                    </p>
+                 </div>
+            </div>
+
           </div>
 
           {/* Founder Signature */}
-          <div className="flex flex-col items-center justify-center text-center" data-aos="fade-up" data-aos-delay="300">
+          <div className="flex flex-col items-center justify-center text-center mt-20" data-aos="fade-up" data-aos-delay="100">
              <div className="bg-white p-1 rounded-full border-2 border-slate-200 mb-4 shadow-sm">
                 <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center overflow-hidden">
                    <User size={32} className="text-slate-400" />
