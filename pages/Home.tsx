@@ -510,7 +510,7 @@ const Home: React.FC = () => {
             data-aos-delay="100"
           >
              <img 
-               src="https://api.dicebear.com/9.x/avataaars/svg?seed=Felix" 
+               src="https://api.dicebear.com/9.x/avataaars/svg?seed=Christopher&eyes=happy&mouth=smile" 
                alt="Founder" 
                className="w-20 h-20 rounded-full border-2 border-pink-500 p-1 bg-pink-50 object-cover flex-shrink-0"
              />

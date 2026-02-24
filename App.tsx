@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Lesson from './pages/Lesson';
+import NotionSync from './pages/NotionSync';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -35,6 +36,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/lesson" element={<Lesson />} />
+            <Route path="/notion-sync" element={<NotionSync />} />
           </Routes>
         </main>
         <Footer />
